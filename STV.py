@@ -106,7 +106,6 @@ def VIE(vie):				#ffichage du nombre de vie
 		xvie = xvie + 30
 
 def tuto():					#ffichage des transitions et du tuto
-	sonTrans.play()
 	t = randint(1,3)
 	transition(t,t1txt)
 	screen.blit(ttuto, (0,0))
@@ -129,8 +128,7 @@ def outil(valide,objet): 		#Gestion de l'objet équipe
 		screen.blit(objet,(600,460))
 
 def pts_scenario(scenario):			#les points scenario regulier
-	sonTrans.stop()
-	MSC1.play()
+	MSC2.play()
 	screen.blit(scenario,(0,0))
 	actualiser()
 
@@ -150,9 +148,9 @@ def mort(Sco):								#Respawn apres la mort
 	sonmort.play()
 	actualiser()
 	attenteclic()
-	MSC1.stop()
+	MSC2.stop()
 	sonAilefeu.stop()
-	MSC1.play()
+	MSC2.play()
 	IntroGAMEPLAY(Orientation,mp_prison,30,400,5)
 	salle3(Orientation,entree,valide,objet,vie,Sco)
 
@@ -2445,7 +2443,7 @@ def salle8(Orientation,position,valide,objet,vie,Sco):
 	FIN= False
 	walkCount=0
 	if not 8 in visiter :
-		MSC1.stop()
+		MSC2.stop()
 		sonAilefeu.play()
 		visiter.append(8)
 	while not FIN:
